@@ -79,5 +79,9 @@ window.addEventListener('keydown', (event) => {
       frontEndPlayers[socket.id].x += 5
       socket.emit('keydown', 'KeyD')
       break
+
+    case 'Space':
+      socket.emit('keydown', 'Space')
+      break
   }
 })

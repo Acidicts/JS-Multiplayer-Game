@@ -23,7 +23,7 @@ io.on('connection', (socket) => {
   backEndPlayers[socket.id] = {
     x: 500 * Math.random(),
     y: 500 * Math.random(),
-    color: `hsl(${360 * Math.random()}, 100%, 50%)`
+    color: `hsl(${720 * Math.random()}, 100%, 50%)`
   }
 
   io.emit("updatePlayers", backEndPlayers)
@@ -50,6 +50,10 @@ io.on('connection', (socket) => {
   
       case 'KeyD':
         backEndPlayers[socket.id].x += 5
+        break
+      
+      case 'Space':
+        backEndPlayers[socket.id].color = `hsl(${720 * Math.random()}, 100%, 50%)`
         break
     }
   })
